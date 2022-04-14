@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather Dashboard</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
+    <link rel="stylesheet" href="./assets/css/styles.css">
+</head>
+<body>
+    <header>
+        <h1 class="title is-1 has-background-info has-text-centered p-3 has-text-white">Weather Dashboard</h1>
+    </header>
+    <main class="columns">
+        <!-- Search Bar Section -->
+        <section class="column is-one-third">
+            <h2 class="title is-2">Search for a City: </h2>
+            <input class="input mb-2" type="text" placeholder="Minneapolis">
+            <button class="button is-info">Search</button>
+        </section>
+        <!-- Weather Data Section -->
+        <section class="column is-two-thirds">
+            <!-- Current Weather Card -->
+            <div class="card mt-3">
+                <div class="card-header has-background-info">
+                    <h3 class="title is-3 m-3 has-text-white">Current City Weather</h3>
+                </div>
+                <div class="card-content">
+                    <p>Weather Data</p>
+                    <p>Weather Data</p>
+                    <p>Weather Data</p>
+                    <p>Weather Data</p>
+                    <p>Weather Data</p>
+                </div>
+            </div>
+            <!-- 5 Day Forecast Card -->
+            <div class="card mt-3">
+                <div class="card-header has-background-info">
+                    <h3 class="title is-3 m-3 has-text-white">5 Day Forecast</h3>
+                </div>
+                <div class="card-content columns">
+                    <!-- Day One Card -->
+                    <div class="card column is-one-fifth">
+                        <div class="card-header has-background-info">
+                            <h5 class="title is-5 m-3 has-text-white">Day One</h5>
+                        </div>
+                        <div class="card-content">
+                            Day One Weather
+                        </div>
+                    </div>
+                    <!-- Day Two Card -->
+                    <div class="card column is-one-fifth">
+                        <div class="card-header has-background-info">
+                            <h5 class="title is-5 m-3 has-text-white">Day Two</h5>
+                        </div>
+                        <div class="card-content">
+                            Day Two Weather
+                        </div>
+                    </div>
+                    <!-- Day 3 Card -->
+                    <div class="card column is-one-fifth">
+                        <div class="card-header has-background-info">
+                            <h5 class="title is-5 m-3 has-text-white">Day Three</h5>
+                        </div>
+                        <div class="card-content">
+                            Day Three Weather
+                        </div>
+                    </div>
+                    <!-- Day 4 Card -->
+                    <div class="card column is-one-fifth">
+                        <div class="card-header has-background-info">
+                            <h5 class="title is-5 m-3 has-text-white">Day Four</h5>
+                        </div>
+                        <div class="card-content">
+                            Day Four Weather
+                        </div>
+                    </div>
+                    <!-- Day 5 Card -->
+                    <div class="card column is-one-fifth">
+                        <div class="card-header has-background-info">
+                            <h5 class="title is-5 m-3 has-text-white">Day Five</h5>
+                        </div>
+                        <div class="card-content">
+                            Day Five Weather
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </section>
+
+    </main>
+    <script src="./assets/js/index.js"></script>
+</body>
+</html>
