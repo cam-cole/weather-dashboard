@@ -1,0 +1,1 @@
+ var weatherApiKey = 'c277edf86dbd5e7f74e2bb44f84bbab0'
