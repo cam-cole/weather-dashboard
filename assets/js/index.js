@@ -39,51 +39,87 @@ var getWeatherInfo = function(latitude, longitude, cityDisplayName) {
                 console.log(data);
 
                 // current weather
-                currentTemp = data.current.temp;
-                currentWind = data.current.wind_speed;
-                currentHumidity = data.current.humidity;
-                currentUvIndex = data.current.uvi;
+                var currentDate = new Date(data.current.dt * 1000).toLocaleDateString('en-US', {
+                    day: '2-digit',
+                    month: '2-digit',
+                    year: 'numeric'
+                });
+                var currentTemp = data.current.temp;
+                var currentWind = data.current.wind_speed;
+                var currentHumidity = data.current.humidity;
+                var currentUvIndex = data.current.uvi;
+                $('#current-date').text("(" + currentDate + ")");
                 $("#current-temp").text("Temp: " + currentTemp + " F");
                 $("#current-wind").text("Wind: " + currentWind + " MPH");
                 $("#current-humidity").text("Humidity: " + currentHumidity + "%");
                 $("#current-uv-index").text("UV Index: " + currentUvIndex);
 
                 // day one weather
-                dayOneTemp = data.daily[0].temp.day;
-                dayOneWind = data.daily[0].wind_speed;
-                dayOneHumidity = data.daily[0].humidity;
+                var dayOneDate = new Date(data.daily[1].dt * 1000).toLocaleDateString('en-US', {
+                    day: '2-digit',
+                    month: '2-digit',
+                    year: 'numeric'
+                });
+                var dayOneTemp = data.daily[1].temp.day;
+                var dayOneWind = data.daily[1].wind_speed;
+                var dayOneHumidity = data.daily[1].humidity;
+                $('#day-one-date').text(dayOneDate);
                 $('#day-one-temp').text("Temp: " + dayOneTemp + " F");
                 $('#day-one-wind').text("Wind: " + dayOneWind + " MPH");
                 $('#day-one-humidity').text("Humidity: " + dayOneHumidity + "%");
 
                 // day two weather
-                dayTwoTemp = data.daily[1].temp.day;
-                dayTwoWind = data.daily[1].wind_speed;
-                dayTwoHumidity = data.daily[1].humidity;
+                var dayTwoDate = new Date(data.daily[2].dt * 1000).toLocaleDateString('en-US', {
+                    day: '2-digit',
+                    month: '2-digit',
+                    year: 'numeric'
+                });
+                var dayTwoTemp = data.daily[2].temp.day;
+                var dayTwoWind = data.daily[2].wind_speed;
+                var dayTwoHumidity = data.daily[2].humidity;
+                $('#day-two-date').text(dayTwoDate);
                 $('#day-two-temp').text("Temp: " + dayTwoTemp + " F");
                 $('#day-two-wind').text("Wind: " + dayTwoWind + " MPH");
                 $('#day-two-humidity').text("Humidity: " + dayTwoHumidity + "%");
 
                 // day three weather
-                dayThreeTemp = data.daily[2].temp.day;
-                dayThreeWind = data.daily[2].wind_speed;
-                dayThreeHumidity = data.daily[2].humidity;
+                var dayThreeDate = new Date(data.daily[3].dt * 1000).toLocaleDateString('en-US', {
+                    day: '2-digit',
+                    month: '2-digit',
+                    year: 'numeric'
+                });
+                var dayThreeTemp = data.daily[3].temp.day;
+                var dayThreeWind = data.daily[3].wind_speed;
+                var dayThreeHumidity = data.daily[3].humidity;
+                $('#day-three-date').text(dayThreeDate);
                 $('#day-three-temp').text("Temp: " + dayThreeTemp + " F");
                 $('#day-three-wind').text("Wind: " + dayThreeWind + " MPH");
                 $('#day-three-humidity').text("Humidity: " + dayThreeHumidity + "%");
 
                 // day four weather
-                dayFourTemp = data.daily[3].temp.day;
-                dayFourWind = data.daily[3].wind_speed;
-                dayFourHumidity = data.daily[3].humidity;
+                var dayFourDate = new Date(data.daily[4].dt * 1000).toLocaleDateString('en-US', {
+                    day: '2-digit',
+                    month: '2-digit',
+                    year: 'numeric'
+                });
+                var dayFourTemp = data.daily[4].temp.day;
+                var dayFourWind = data.daily[4].wind_speed;
+                var dayFourHumidity = data.daily[4].humidity;
+                $('#day-four-date').text(dayFourDate);
                 $('#day-four-temp').text("Temp: " + dayFourTemp + " F");
                 $('#day-four-wind').text("Wind: " + dayFourWind + " MPH");
                 $('#day-four-humidity').text("Humidity: " + dayFourHumidity + "%");
 
                 // day five weather
-                dayFiveTemp = data.daily[4].temp.day;
-                dayFiveWind = data.daily[4].wind_speed;
-                dayFiveHumidity = data.daily[4].humidity;
+                var dayFiveDate = new Date(data.daily[5].dt * 1000).toLocaleDateString('en-US', {
+                    day: '2-digit',
+                    month: '2-digit',
+                    year: 'numeric'
+                });
+                var dayFiveTemp = data.daily[5].temp.day;
+                var dayFiveWind = data.daily[5].wind_speed;
+                var dayFiveHumidity = data.daily[5].humidity;
+                $('#day-five-date').text(dayFiveDate);
                 $('#day-five-temp').text("Temp: " + dayFiveTemp + " F");
                 $('#day-five-wind').text("Wind: " + dayFiveWind + " MPH");
                 $('#day-five-humidity').text("Humidity: " + dayFiveHumidity + "%");
