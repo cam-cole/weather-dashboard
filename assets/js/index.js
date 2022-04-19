@@ -172,7 +172,13 @@ var getWeatherInfo = function(latitude, longitude, cityDisplayName) {
 }
 
 var loadSearchedCities = function () {
-    console.log("Load Saved Searches");
+    for (i = 0; i < localStorage.length; i++) {
+        var loadedCitySearchEl = document.createElement("button");
+        loadedCitySearchEl.textContent = localStorage.key(i);
+        $(loadedCitySearchEl).addClass("button has-background-grey-light column is-full mb-2 has-text-white");
+        $(loadedCitySearchEl).attr("id", "loaded");
+        searchedCitiesContainer.appendChild(loadedCitySearchEl);
+    }
 }
 
 $('#search').on("click", function() {
@@ -180,3 +186,11 @@ $('#search').on("click", function() {
     var cityName = $("#search-input").val();
     getCityCoordinates(cityName);
 })
+
+$('#searched-cities').on("click", ".button", function() {
+    console.log("Loaded Search Clicked!")
+    var cityName = this.textContent;
+    getCityCoordinates(cityName);
+})
+
+loadSearchedCities();
