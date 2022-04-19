@@ -150,11 +150,14 @@ var getWeatherInfo = function(latitude, longitude, cityDisplayName) {
                 $('#day-five-wind').text("Wind: " + dayFiveWind + " MPH");
                 $('#day-five-humidity').text("Humidity: " + dayFiveHumidity + "%");
 
+                // create buttons for saved searches
                 var citySearchEl = document.createElement("button");
                 citySearchEl.textContent = name;
-                $(citySearchEl).addClass("button is-info column is-full mb-2");
+                $(citySearchEl).addClass("button has-background-grey-light column is-full mb-2 has-text-white");
                 searchedCitiesContainer.appendChild(citySearchEl);
 
+                // save search to local storage
+                localStorage.setItem(name, name);
             })
         }
         else {
@@ -166,6 +169,10 @@ var getWeatherInfo = function(latitude, longitude, cityDisplayName) {
     })
 
     $("#city-name").text(name);
+}
+
+var loadSearchedCities = function () {
+    console.log("Load Saved Searches");
 }
 
 $('#search').on("click", function() {
