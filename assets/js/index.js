@@ -58,7 +58,7 @@ var getWeatherInfo = function(latitude, longitude, cityDisplayName) {
 
                 // format uv index color indicator
                 if (currentUvIndex <= 3) {
-                    $("#current-uv-index").addClass("box has-background-success px-3 py-1");
+                    $("#current-uv-index").addClass("box has-background-success px-3 py-1 has-text-white");
                 }
 
                 else if (currentUvIndex > 3 && currentUvIndex <= 5) {
@@ -66,7 +66,7 @@ var getWeatherInfo = function(latitude, longitude, cityDisplayName) {
                 }
 
                 else if (currentUvIndex > 5) {
-                    $("#current-uv-index").addClass("box has-background-danger px-3 py-1")
+                    $("#current-uv-index").addClass("box has-background-danger px-3 py-1 has-text-white")
                 }
 
                 // day one weather
