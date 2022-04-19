@@ -1,5 +1,6 @@
 var weatherApiKey = 'c277edf86dbd5e7f74e2bb44f84bbab0'
 var weatherApiUrl = 'https://api.openweathermap.org/data/2.5/onecall?'
+var searchedCitiesContainer = document.querySelector("#searched-cities");
 
 var getCityCoordinates = function(city) {
     //  format the geocoding api url
@@ -148,6 +149,12 @@ var getWeatherInfo = function(latitude, longitude, cityDisplayName) {
                 $('#day-five-temp').text("Temp: " + dayFiveTemp + " F");
                 $('#day-five-wind').text("Wind: " + dayFiveWind + " MPH");
                 $('#day-five-humidity').text("Humidity: " + dayFiveHumidity + "%");
+
+                var citySearchEl = document.createElement("button");
+                citySearchEl.textContent = name;
+                $(citySearchEl).addClass("button is-info column is-full mb-2");
+                searchedCitiesContainer.appendChild(citySearchEl);
+
             })
         }
         else {
@@ -158,7 +165,7 @@ var getWeatherInfo = function(latitude, longitude, cityDisplayName) {
         alert("Unable to connect to OpenWeather API");
     })
 
-    $("#city-name").text(cityDisplayName);
+    $("#city-name").text(name);
 }
 
 $('#search').on("click", function() {

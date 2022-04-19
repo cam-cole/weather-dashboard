@@ -6,3 +6,9 @@
 #current-uv-index {
     display: inline-block;
 }
+
+.search-bar-break {
+    width: 80%;
+    border: 2px solid grey;
+    margin: 20px auto 20px auto;
+}
