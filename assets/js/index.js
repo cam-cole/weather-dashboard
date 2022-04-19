@@ -44,10 +44,12 @@ var getWeatherInfo = function(latitude, longitude, cityDisplayName) {
                     month: '2-digit',
                     year: 'numeric'
                 });
+                var currentWeatherIcon = data.current.weather[0].icon;
                 var currentTemp = data.current.temp;
                 var currentWind = data.current.wind_speed;
                 var currentHumidity = data.current.humidity;
                 var currentUvIndex = data.current.uvi;
+                $('#current-weather-icon').attr("src", "http://openweathermap.org/img/w/" + currentWeatherIcon + ".png")
                 $('#current-date').text("(" + currentDate + ")");
                 $("#current-temp").text("Temp: " + currentTemp + " F");
                 $("#current-wind").text("Wind: " + currentWind + " MPH");
@@ -55,6 +57,7 @@ var getWeatherInfo = function(latitude, longitude, cityDisplayName) {
                 $("#current-uv-index").text("UV Index: " + currentUvIndex);
 
                 // day one weather
+                var dayOneIcon = data.daily[1].weather[0].icon;
                 var dayOneDate = new Date(data.daily[1].dt * 1000).toLocaleDateString('en-US', {
                     day: '2-digit',
                     month: '2-digit',
@@ -63,6 +66,7 @@ var getWeatherInfo = function(latitude, longitude, cityDisplayName) {
                 var dayOneTemp = data.daily[1].temp.day;
                 var dayOneWind = data.daily[1].wind_speed;
                 var dayOneHumidity = data.daily[1].humidity;
+                $('#day-one-icon').attr("src", "http://openweathermap.org/img/w/" + dayOneIcon + ".png")
                 $('#day-one-date').text(dayOneDate);
                 $('#day-one-temp').text("Temp: " + dayOneTemp + " F");
                 $('#day-one-wind').text("Wind: " + dayOneWind + " MPH");
