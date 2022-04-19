@@ -54,7 +54,7 @@ var getWeatherInfo = function(latitude, longitude, cityDisplayName) {
                 $("#current-temp").text("Temp: " + currentTemp + " F");
                 $("#current-wind").text("Wind: " + currentWind + " MPH");
                 $("#current-humidity").text("Humidity: " + currentHumidity + "%");
-                $("#current-uv-index").text("UV Index: " + currentUvIndex);
+                $("#current-uv-index").text(currentUvIndex);
 
                 // day one weather
                 var dayOneIcon = data.daily[1].weather[0].icon;
