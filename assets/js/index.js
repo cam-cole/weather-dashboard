@@ -56,6 +56,19 @@ var getWeatherInfo = function(latitude, longitude, cityDisplayName) {
                 $("#current-humidity").text("Humidity: " + currentHumidity + "%");
                 $("#current-uv-index").text(currentUvIndex);
 
+                // format uv index color indicator
+                if (currentUvIndex <= 3) {
+                    $("#current-uv-index").addClass("box has-background-success px-3 py-1");
+                }
+
+                else if (currentUvIndex > 3 && currentUvIndex <= 5) {
+                    $("#current-uv-index").addClass("box has-background-warning px-3 py-1")
+                }
+
+                else if (currentUvIndex > 5) {
+                    $("#current-uv-index").addClass("box has-background-danger px-3 py-1")
+                }
+
                 // day one weather
                 var dayOneIcon = data.daily[1].weather[0].icon;
                 var dayOneDate = new Date(data.daily[1].dt * 1000).toLocaleDateString('en-US', {
