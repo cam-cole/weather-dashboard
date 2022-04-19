@@ -73,6 +73,7 @@ var getWeatherInfo = function(latitude, longitude, cityDisplayName) {
                 $('#day-one-humidity').text("Humidity: " + dayOneHumidity + "%");
 
                 // day two weather
+                var dayTwoIcon = data.daily[2].weather[0].icon;
                 var dayTwoDate = new Date(data.daily[2].dt * 1000).toLocaleDateString('en-US', {
                     day: '2-digit',
                     month: '2-digit',
@@ -81,12 +82,14 @@ var getWeatherInfo = function(latitude, longitude, cityDisplayName) {
                 var dayTwoTemp = data.daily[2].temp.day;
                 var dayTwoWind = data.daily[2].wind_speed;
                 var dayTwoHumidity = data.daily[2].humidity;
+                $('#day-two-icon').attr("src", "http://openweathermap.org/img/w/" + dayTwoIcon + ".png")
                 $('#day-two-date').text(dayTwoDate);
                 $('#day-two-temp').text("Temp: " + dayTwoTemp + " F");
                 $('#day-two-wind').text("Wind: " + dayTwoWind + " MPH");
                 $('#day-two-humidity').text("Humidity: " + dayTwoHumidity + "%");
 
                 // day three weather
+                var dayThreeIcon = data.daily[3].weather[0].icon;
                 var dayThreeDate = new Date(data.daily[3].dt * 1000).toLocaleDateString('en-US', {
                     day: '2-digit',
                     month: '2-digit',
@@ -95,12 +98,14 @@ var getWeatherInfo = function(latitude, longitude, cityDisplayName) {
                 var dayThreeTemp = data.daily[3].temp.day;
                 var dayThreeWind = data.daily[3].wind_speed;
                 var dayThreeHumidity = data.daily[3].humidity;
+                $('#day-three-icon').attr("src", "http://openweathermap.org/img/w/" + dayThreeIcon + ".png")
                 $('#day-three-date').text(dayThreeDate);
                 $('#day-three-temp').text("Temp: " + dayThreeTemp + " F");
                 $('#day-three-wind').text("Wind: " + dayThreeWind + " MPH");
                 $('#day-three-humidity').text("Humidity: " + dayThreeHumidity + "%");
 
                 // day four weather
+                var dayFourIcon = data.daily[4].weather[0].icon;
                 var dayFourDate = new Date(data.daily[4].dt * 1000).toLocaleDateString('en-US', {
                     day: '2-digit',
                     month: '2-digit',
@@ -109,12 +114,14 @@ var getWeatherInfo = function(latitude, longitude, cityDisplayName) {
                 var dayFourTemp = data.daily[4].temp.day;
                 var dayFourWind = data.daily[4].wind_speed;
                 var dayFourHumidity = data.daily[4].humidity;
+                $('#day-four-icon').attr("src", "http://openweathermap.org/img/w/" + dayFourIcon + ".png")
                 $('#day-four-date').text(dayFourDate);
                 $('#day-four-temp').text("Temp: " + dayFourTemp + " F");
                 $('#day-four-wind').text("Wind: " + dayFourWind + " MPH");
                 $('#day-four-humidity').text("Humidity: " + dayFourHumidity + "%");
 
                 // day five weather
+                var dayFiveIcon = data.daily[5].weather[0].icon;
                 var dayFiveDate = new Date(data.daily[5].dt * 1000).toLocaleDateString('en-US', {
                     day: '2-digit',
                     month: '2-digit',
@@ -123,6 +130,7 @@ var getWeatherInfo = function(latitude, longitude, cityDisplayName) {
                 var dayFiveTemp = data.daily[5].temp.day;
                 var dayFiveWind = data.daily[5].wind_speed;
                 var dayFiveHumidity = data.daily[5].humidity;
+                $('#day-five-icon').attr("src", "http://openweathermap.org/img/w/" + dayFiveIcon + ".png")
                 $('#day-five-date').text(dayFiveDate);
                 $('#day-five-temp').text("Temp: " + dayFiveTemp + " F");
                 $('#day-five-wind').text("Wind: " + dayFiveWind + " MPH");
